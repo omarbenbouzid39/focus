@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Study Focus – Settings</title><link rel="stylesheet" href="../shared/ui.css"><link rel="stylesheet" href="settings.css"><link rel="manifest" href="../manifest.webmanifest"><meta name="theme-color" content="#14110f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png"></head>
+<body><main>
+<h1 data-i18n>Settings</h1>
+<p id="lock" class="warn" hidden data-i18n>Settings are locked during a Strict focus session.</p>
+<section class="card"><h2 data-i18n>General</h2>
+  <div class="field"><span data-i18n>Language</span><select data-k="lang"><option value="ar">العربية</option><option value="en">English</option></select></div>
+  <div class="field"><span data-i18n>Theme</span><select data-k="theme"><option value="dark" data-i18n>Dark</option><option value="light" data-i18n>Light</option></select></div>
+  <label class="opt pwa-only"><input type="checkbox" data-k="keepAwake"><span data-i18n>Keep the screen on during sessions</span></label>
+  <label class="opt ext-only"><input type="checkbox" data-k="mini.auto"><span data-i18n>Open the mini window when a session starts</span></label>
+  <label class="opt"><input type="checkbox" data-k="hideTime"><span data-i18n>Hide the timer during sessions</span></label>
+  <div class="field"><span data-i18n>Daily goal (min)</span><input type="number" min="1" data-k="goalMin"></div>
+</section>
+<section class="card"><h2 data-i18n>Pomodoro</h2>
+  <div class="field"><span data-i18n>Study (min)</span><input type="number" min="1" data-k="study"></div>
+  <div class="field"><span data-i18n>Break (min)</span><input type="number" min="1" data-k="brk"></div>
+</section>
+<section class="card ext-only"><h2 data-i18n>Blocking</h2>
+  <label class="opt"><input type="checkbox" data-k="autoBlock"><span data-i18n>Block automatically with Pomodoro</span></label>
+  <label class="opt"><input type="checkbox" data-k="strict"><span data-i18n>Strict Mode</span></label>
+  <label class="opt"><input type="checkbox" data-k="allowOverride"><span data-i18n>Allow temporary override</span></label>
+  <div class="field"><span data-i18n>Override duration (min)</span><input type="number" min="1" data-k="bypassMinutes"></div>
+  <h3 data-i18n>Blocked websites (Focus Mode only)</h3><textarea dir="ltr" data-k="blockedSites" data-list placeholder="reddit.com"></textarea>
+  <h3 data-i18n>Excluded websites</h3><textarea dir="ltr" data-k="excludedSites" data-list placeholder="docs.google.com"></textarea>
+</section>
+<section class="card ext-only"><h2>▶️ <span data-i18n>Blocked YouTube channels</span></h2>
+  <p class="muted" data-i18n>Videos from these channels are hidden and their pages are blocked during focus sessions.</p>
+  <div class="row"><input type="text" id="chin" dir="ltr" data-ph="Channel @handle or link" style="flex:1;min-width:200px" autocomplete="off" spellcheck="false"><button id="chadd" class="btn primary" data-i18n>Add</button></div>
+  <div id="chmsg" class="warn"></div><ul id="chlist" class="chips"></ul></section>
+<section class="card"><h2 data-i18n>Notifications</h2>
+  <label class="opt"><input type="checkbox" data-k="notif.end"><span data-i18n>Study session finished</span></label>
+  <label class="opt"><input type="checkbox" data-k="notif.breakEnd"><span data-i18n>Break finished</span></label>
+  <label class="opt"><input type="checkbox" data-k="notif.reminder"><span data-i18n>Hourly study reminder</span></label>
+  <label class="opt"><input type="checkbox" data-k="notif.comeback"><span data-i18n>Reminder to get back if paused</span></label>
+</section>
+<button id="wipe" class="btn" data-i18n>Reset all data</button>
+</main><script src="../pwa-shim.js"></script><script src="../shared/core.js"></script><script src="../shared/sounds.js"></script><script src="../background/service-worker.js"></script><script src="settings.js"></script></body></html>

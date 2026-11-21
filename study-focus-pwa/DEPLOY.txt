@@ -1,0 +1,15 @@
+Study Focus PWA - deployment
+============================
+This folder is a static website. A PWA can only be installed from HTTPS (or localhost), so publish it first.
+
+GitHub Pages (free):
+  1. Put the contents of this folder in your repository (e.g. a /docs folder).
+  2. Settings > Pages > Deploy from a branch > main /docs.
+  3. Open https://<user>.github.io/<repo>/ on the phone.
+
+Netlify / Cloudflare Pages: drag this folder in (no build step).
+
+Install on the phone:
+  Android Chrome: menu > "Install app" (or the Install button inside the app).
+  iPhone Safari: Share > "Add to Home Screen".
+Then allow notifications when asked.
